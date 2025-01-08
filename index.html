@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation OnlyFans & IA - Maîtrisez le Business Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Maîtrisez OnlyFans avec l'IA</h1>
+            <p>Découvrez comment créer un revenu passif avec OnlyFans et l'Intelligence Artificielle</p>
+            <div class="timer">
+                <h2>Offre de lancement limitée</h2>
+                <p>Plus que <strong>48 heures</strong> pour profiter de -50%</p>
+            </div>
+            <a href="#pricing" class="btn btn-primary">Je profite de l'offre</a>
+        </div>
+    </header>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <img src="assets/video-placeholder.jpg" alt="Vidéo de présentation" class="video-placeholder">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="video-features">
+                <h2>Découvrez en vidéo...</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Comment générer 1000€+ par mois avec l'IA</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Les outils d'IA les plus performants en 2025</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Notre méthode étape par étape</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Choisissez votre formule</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Standard</h3>
+                    <div class="price">77€</div>
+                    <p><s>147€</s> - Offre de lancement</p>
+                    <ul>
+                        <li>Accès à tous les modules</li>
+                        <li>Support communautaire</li>
+                        <li>Ressources téléchargeables</li>
+                    </ul>
+                    <button onclick="openPaymentModal('standard')" class="btn btn-primary">Je commence</button>
+                </div>
+                <div class="price-card featured">
+                    <h3>Premium</h3>
+                    <div class="price">247€</div>
+                    <p><s>397€</s> - Offre de lancement</p>
+                    <ul>
+                        <li>Tout du pack Standard</li>
+                        <li>2 sessions de coaching en groupe</li>
+                        <li>Accès aux mises à jour (1 an)</li>
+                        <li>Templates personnalisables</li>
+                    </ul>
+                    <button onclick="openPaymentModal('premium')" class="btn btn-primary">Je me lance</button>
+                </div>
+                <div class="price-card">
+                    <h3>VIP</h3>
+                    <div class="price">797€</div>
+                    <p><s>1497€</s> - Offre de lancement</p>
+                    <ul>
+                        <li>Tout du pack Premium</li>
+                        <li>3 sessions de coaching individuel</li>
+                        <li>Audit personnalisé</li>
+                        <li>Accès à vie aux mises à jour</li>
+                    </ul>
+                    <button onclick="openPaymentModal('vip')" class="btn btn-primary">Je deviens VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Finaliser votre inscription</h2>
+            <div id="selectedPlan"></div>
+            
+            <form id="paymentForm" onsubmit="processPayment(event)">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div id="card-element">
+                    <!-- Stripe Card Element will be inserted here -->
+                </div>
+                <div id="card-errors" class="error-message" role="alert"></div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                    <span id="button-text">Payer maintenant</span>
+                    <div class="spinner hidden" id="spinner"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Formation OnlyFans & IA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>
